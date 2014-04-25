@@ -1,9 +1,9 @@
 package kr.co.namsang.mb.barista.ui.view;
 
+import org.namsang.barista.widget.BaseListAdapter;
+
 import kr.co.namsang.mb.barista.data.IndexPath;
 import kr.co.namsang.mb.barista.util.LogUtils;
-
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -31,8 +31,8 @@ public class BNGridView extends GridView
 	public void setAdapter(ListAdapter adapter) {
 		super.setAdapter(adapter);
 		
-		if (adapter instanceof BNBaseAdapter) {
-			final BNBaseAdapter<?> _adapter = (BNBaseAdapter<?>) adapter;
+		if (adapter instanceof BaseListAdapter) {
+			final BaseListAdapter<?> _adapter = (BaseListAdapter<?>) adapter;
 			setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

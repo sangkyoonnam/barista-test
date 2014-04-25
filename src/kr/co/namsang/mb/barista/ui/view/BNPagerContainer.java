@@ -1,7 +1,8 @@
 package kr.co.namsang.mb.barista.ui.view;
 
+import org.namsang.barista.widget.BaseListAdapter.OnCellClickListener;
+
 import kr.co.namsang.mb.barista.data.IndexPath;
-import kr.co.namsang.mb.barista.ui.view.BNBaseAdapter.OnCellClickListener;
 import kr.co.namsang.mb.barista.util.LogUtils;
 import kr.co.namsang.mb.barista.util.UiUtils;
 import android.content.Context;

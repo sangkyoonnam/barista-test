@@ -4,11 +4,11 @@ package kr.co.namsang.mb.barista.ui.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.namsang.barista.widget.BaseListAdapter.OnCellClickListener;
+
 import kr.co.namsang.mb.barista.R;
 import kr.co.namsang.mb.barista.data.IndexPath;
 import kr.co.namsang.mb.barista.io.ImageLoader;
-import kr.co.namsang.mb.barista.ui.view.BNBaseAdapter.OnCellClickListener;
-
 import android.app.Activity;
 import android.content.Context;
 import android.util.Pair;

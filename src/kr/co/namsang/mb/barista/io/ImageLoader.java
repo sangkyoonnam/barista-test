@@ -77,6 +77,7 @@ public class ImageLoader
     }
     
     private Bitmap getBitmap(String url) {
+    	if (url == null) return null;
         File f = fileCache.getFile(url);
         
         //from SD cache

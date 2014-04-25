@@ -14,18 +14,18 @@ import android.widget.TextView;
 public class FontUtils {
 	
 
-	private static Typeface regular;
+	private static Typeface normal;
 	private static Typeface bold;
 	private static Typeface italic;
 	
-	
+	public static Typeface getNormal() { return normal; }
 	public static Typeface getBold() { return bold; }
 	public static Typeface getItalic() { return italic; }
 	
 	public static void setCustomFont(AssetManager assetManager, 
-			String regularFont, String boldFont, String italicFont) {
-		if (regularFont != null)
-			regular = Typeface.createFromAsset(assetManager, regularFont);
+			String normalFont, String boldFont, String italicFont) {
+		if (normalFont != null)
+			normal = Typeface.createFromAsset(assetManager, normalFont);
 		if (boldFont != null)
 			bold = Typeface.createFromAsset(assetManager, boldFont);
 		if (italicFont != null)
@@ -56,10 +56,12 @@ public class FontUtils {
 				textView.setTypeface(bold);
 			else if (style == Typeface.ITALIC)
 				textView.setTypeface(italic);
-			else
-				textView.setTypeface(regular);		
+			else 
+				textView.setTypeface(normal);		
 		}
-		catch (Exception e) {}
+		catch (Exception e) {
+			textView.setTypeface(normal);
+		}
 	}
 	
 	public static void setCustomFont(Button button) {
@@ -72,8 +74,10 @@ public class FontUtils {
 			else if (style == Typeface.ITALIC)
 				button.setTypeface(italic);
 			else
-				button.setTypeface(regular);
+				button.setTypeface(normal);
 		}
-		catch(Exception e) {}
+		catch(Exception e) {
+			button.setTypeface(normal);
+		}
 	}
 }

@@ -19,7 +19,7 @@
  *					
  */
 
-package kr.co.namsang.mb.barista.core;
+package org.namsang.barista.os;
 
 import java.lang.ref.WeakReference;
 

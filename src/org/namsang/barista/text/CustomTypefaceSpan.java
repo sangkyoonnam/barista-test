@@ -1,4 +1,4 @@
-package org.namsang.barista.util;
+package org.namsang.barista.text;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;

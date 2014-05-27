@@ -4,8 +4,9 @@ package kr.co.namsang.mb.barista.app;
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.co.namsang.mb.barista.R;
 import kr.co.namsang.mb.barista.util.LogUtils;
+
+import org.namsang.barista.R;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;

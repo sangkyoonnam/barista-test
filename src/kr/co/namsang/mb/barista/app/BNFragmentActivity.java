@@ -24,6 +24,10 @@ public class BNFragmentActivity extends FragmentActivity
     public void prepareToLoad() {}    
 
     public void reloadData() {}
+    
+    public void refresh() {
+		
+	}
 	
     /**
      * 현재 액티비티에 키보드가 표시된 경우 숨김

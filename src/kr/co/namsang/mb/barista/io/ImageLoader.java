@@ -14,20 +14,16 @@ import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import kr.co.namsang.mb.barista.io.FileCache;
-import kr.co.namsang.mb.barista.io.MemoryCache;
 import kr.co.namsang.mb.barista.util.IOUtils;
-import kr.co.namsang.mb.barista.util.LogUtils;
 import kr.co.namsang.mb.barista.util.UiUtils;
 
-import kr.co.namsang.mb.barista.R;
+import org.namsang.barista.R;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.ImageView;
 
 public class ImageLoader 

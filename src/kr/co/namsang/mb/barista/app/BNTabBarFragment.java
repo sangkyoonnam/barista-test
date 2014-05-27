@@ -5,7 +5,7 @@ package kr.co.namsang.mb.barista.app;
 import java.util.HashMap;
 import java.util.Map;
 
-import kr.co.namsang.mb.barista.R;
+import org.namsang.barista.R;
 
 import android.content.Context;
 import android.os.AsyncTask;

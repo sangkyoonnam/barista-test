@@ -8,17 +8,16 @@ package kr.co.namsang.mb.barista.app;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.namsang.barista.R;
 import org.namsang.barista.widget.BaseTabItem;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.TabHost;
-import kr.co.namsang.mb.barista.R;
 
 public class BNTabBarFragmentActivity extends BNFragmentActivity {
 	// tag
@@ -67,6 +66,10 @@ public class BNTabBarFragmentActivity extends BNFragmentActivity {
 		//mTabHost.setBackgroundColor(Color.TRANSPARENT);
 		
         mTabManager = new TabManager(this, mTabHost, R.id.realtabcontent);
+	}
+	
+	public void refresh() {
+		
 	}
 	
 	public static class TabManager implements TabHost.OnTabChangeListener 

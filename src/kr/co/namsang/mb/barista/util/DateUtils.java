@@ -5,11 +5,25 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class DateUtils 
 {
-	private static final String PATTERN_ISO8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'";	
+	public enum DateFormat {
+		ISO8601("yyyy-MM-dd'T'HH:mm:ssZ");
+		
+		private String template;
+		private DateFormat(String template) { this.template = template; }
+		public String getTemplate() { return template; }
+		//-- --//
+		public int key() { return ordinal(); }
+		public static int size() { return DateFormat.values().length; }
+		public static DateFormat valueAt(int key) { return DateFormat.values()[key]; }
+	}
+	
+	public static final String PATTERN_ISO8601 = "yyyy-MM-dd'T'HH:mm:ss'Z'";	
+	//"yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 	
 	public static final String FORMAT_ISO8601 = "yyyy-MM-dd'T'HH:mm:ssz";
     public static final String FORMAT_YYYYMMDD = "yyyy-MM-dd";
@@ -35,10 +49,39 @@ public class DateUtils
     	return date;
     }
     
+    //-- BARISTA RENEWAL --//
+    //-- BARISTA RENEWAL --//    
+    /* SimpleDateFormat (Java 6 and ealier) are not ISO8601 compliant. SimpleDateFormat understands 
+     * time zone like "GMT+09:00" or "+9000", the latter according to RFC #822(http://www.ietf.org/rfc/rfc0822.txt)
+     */
+    
+    public static String fromCalendar(final Calendar calendar, DateFormat format) {
+    	Date date = calendar.getTime();
+    	SimpleDateFormat sdf = new SimpleDateFormat(format.getTemplate(), Locale.ENGLISH);
+    	return sdf.format(date);
+    }
+    
+    public static Calendar toCalendar(final String dateString, DateFormat format) 
+    		throws ParseException {
+    	Calendar calendar = null;
+    	String s = dateString.replace("Z", "+00:00");
+    	try {
+            s = s.substring(0, 22) + s.substring(23);  // to get rid of the ":"
+        } catch (IndexOutOfBoundsException e) {
+            throw new ParseException("Invalid length", 0);
+        }
+    	SimpleDateFormat sdf = new SimpleDateFormat(format.getTemplate(), Locale.ENGLISH);
+    	Date date = sdf.parse(s);
+    	if (date != null) {
+    		calendar = GregorianCalendar.getInstance();
+    		calendar.setTime(date);    		
+    	}
+    	return calendar;
+    }
     
     
-    
-    
+    //-- BARISTA RENEWAL --//
+    //-- BARISTA RENEWAL --//
     
     
     

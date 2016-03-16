@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
      
-	<attr name="switchStyle" format="reference" />
+	<!--<attr name="switchStyle" format="reference" />-->
     <declare-styleable name="Switch">
 	    <attr name="textLeft" format="string"/>
 	    <attr name="textRight" format="string"/>
-	    <attr name="switchMinWidth" format="dimension" />
-	    <attr name="switchPadding" format="dimension" />	    
+	    <!--<attr name="switchMinWidth" format="dimension" />-->
+	    <!--<attr name="switchPadding" format="dimension" />	    -->
 	    <attr name="colorUnChecked" format="color" />	    
 	    <attr name="colorChecked" format="color" />	    
 	    <attr name="backgroundDrawable" format="reference" />	    
@@ -24,7 +24,7 @@
     </declare-styleable>
     
 	<declare-styleable name="BNListView">
-	    <attr name="showText" format="boolean" />
+	    <!--<attr name="showText" format="boolean" />-->
    	</declare-styleable>
    	
 	
